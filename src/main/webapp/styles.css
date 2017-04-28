@@ -1,0 +1,10 @@
+.center {
+    margin:auto;
+    padding:5px;
+    width:50%;
+}
+
+.entry {
+    margin: 5px 0;
+    border:1px solid black;
+}

@@ -9,9 +9,9 @@
     </head>
     <body class="center">
         <h1>Please login</h1>
-        <form action="AdminPanel.do" method="post">
+        <form action="admin" method="post">
             Username: <input type="text" name="user"><br>
-            Password: <input type="password" name="pwd"><br>
+            Password: <input type="password" name="password"><br>
             <input type="submit" value="Login">
         </form>
     </body>

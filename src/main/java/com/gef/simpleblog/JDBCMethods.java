@@ -23,21 +23,6 @@ public class JDBCMethods {
         connection.close();
     }
     
-    public static ArrayList<String> getAllUsers() throws ClassNotFoundException, SQLException, NamingException {
-        ArrayList<String> names = new ArrayList<String>();
-        
-        ConnectToDB();
-        statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("SELECT NAME FROM USERS");
-        while (rs.next()) {
-            names.add(rs.getString("name"));
-        }
-        rs.close();
-        statement.close();
-        CloseDBConnection();
-        return names;
-    }
-    
     public static ArrayList<BlogEntry> getAllEntries() throws ClassNotFoundException, SQLException, NamingException {
         ArrayList<BlogEntry> entries = new ArrayList<>();
         ConnectToDB();
@@ -50,9 +35,28 @@ public class JDBCMethods {
             entry.setPost(rs.getString("TEXT"));
             entries.add(entry);
         }
-        
         CloseDBConnection();
         return entries;
     }
     
+    public static boolean isUserExisted(String user, String password) throws ClassNotFoundException, SQLException, NamingException {
+        ConnectToDB();
+        statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("SELECT USER, PASSWORD FROM USERS");
+        while (rs.next()) {
+            if (rs.getString("USER").equals(user) && rs.getString("PASSWORD").equals(password)) {
+                CloseDBConnection();
+                return true;
+            }
+        }
+        CloseDBConnection();
+        return false;
+    }
+
+    public static void addNewPost(String username, String post) throws ClassNotFoundException, SQLException, NamingException {
+        ConnectToDB();
+        statement = connection.createStatement();
+        ResultSet rs = statement.executeQuery("INSERT INTO BLOG(AUTHOR, TEXT) VALUES('" + username + "','" + post + "')");
+        CloseDBConnection();
+    }
 }

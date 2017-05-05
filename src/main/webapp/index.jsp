@@ -11,6 +11,7 @@
     </head>
     <body class="center">
         <h1>SimpleBlog</h1>
+        <a href="admin">Admin</a>
         <%
             //try {
             ArrayList<BlogEntry> entries = JDBCMethods.getAllEntries();
@@ -22,6 +23,5 @@
         //    e.printStackTrace();
         //}
             %>
-        <a href="admin">Admin</>
     </body>
 </html>

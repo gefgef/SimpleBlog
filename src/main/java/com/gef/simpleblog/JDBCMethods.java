@@ -56,7 +56,7 @@ public class JDBCMethods {
     public static void addNewPost(String username, String post) throws ClassNotFoundException, SQLException, NamingException {
         ConnectToDB();
         statement = connection.createStatement();
-        ResultSet rs = statement.executeQuery("INSERT INTO BLOG(AUTHOR, TEXT) VALUES('" + username + "','" + post + "')");
+        statement.executeQuery("INSERT INTO BLOG(AUTHOR, TEXT) VALUES('" + username + "','" + post + "')");
         CloseDBConnection();
     }
 }

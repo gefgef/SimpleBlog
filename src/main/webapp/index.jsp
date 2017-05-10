@@ -13,15 +13,11 @@
         <h1>SimpleBlog</h1>
         <a href="admin">Admin</a>
         <%
-            //try {
             ArrayList<BlogEntry> entries = JDBCMethods.getAllEntries();
             for (BlogEntry entry : entries) {
                 out.println("<div class='entry'><p style='font-weight:bold'}>"+ entry.getAuthor() + " wrote: </p>");
                 out.println("<p>" + entry.getPost() + "</p></div>");
             }
-        //} catch (Exception e) {
-        //    e.printStackTrace();
-        //}
             %>
     </body>
 </html>

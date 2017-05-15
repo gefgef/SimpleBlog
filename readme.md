@@ -2,10 +2,14 @@ SimpleBlog
 ==========
 Educational mini project
 
-Tech Stack: Java (javaee, servlet, jsp, jdbc), Maven, Tomcat, sqlite
+Tech Stack: Java (servlet, jsp, jdbc), Maven, Tomcat, sqlite, TestNG, Mockito
 
 Installation
 ------------
+1. Check Java `java -version`
+2. Clone repo and import pom.xml
+3. Create DB testdatabase.db and put to tomcat's bin folder
+4. Run with IDE or tomcat /webapps
 
 Database
 --------
@@ -21,6 +25,6 @@ PASSWORD TEXT NOT NULL);
 Links
 -----
 1. [Tutorials Point](https://www.tutorialspoint.com/index.htm)
-
-2. [Servlet Tutorial](http://www.journaldev.com/1877/servlet-tutorial-java)
-3. [JSP Tutorial](http://www.jsptut.com/)
+2. O'Reilly Head First Servlets and JSP
+3. [Servlet Tutorial](http://www.journaldev.com/1877/servlet-tutorial-java)
+4. [JSP Tutorial](http://www.jsptut.com/)

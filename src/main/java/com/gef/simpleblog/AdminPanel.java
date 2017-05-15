@@ -13,20 +13,20 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 
-@WebServlet(name = "AdminPanel.do", urlPatterns = {"/admin"})
+@WebServlet(name = "AdminPanel", urlPatterns = {"/admin"})
 public class AdminPanel extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-            if (CookieMethods.isUserCookiePresent(request)) {
-                RequestDispatcher view = request.getRequestDispatcher("addNewPostForm.jsp");
-                view.forward(request, response);
-            } else {
-                RequestDispatcher view = request.getRequestDispatcher("loginForm.jsp");
-                view.forward(request, response);
-            }
+        if (CookieMethods.isUserCookiePresent(request)) {
+            RequestDispatcher view = request.getRequestDispatcher("addNewPostForm.jsp");
+            view.forward(request, response);
+        } else {
+            RequestDispatcher view = request.getRequestDispatcher("loginForm.jsp");
+            view.forward(request, response);
+        }
         
     }
 

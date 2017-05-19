@@ -19,27 +19,26 @@ public class TestServlet extends HttpServlet {
         response.setContentType("text/html;charset=UTF-8");
         PrintWriter out = response.getWriter();
         out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet NewServlet</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h2>Servlet NewServlet at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+        out.println("<html>");
+        out.println("<head>");
+        out.println("<title>TestServlet</title>");
+        out.println("</head>");
+        out.println("<body>");
+        out.println("<h2>Servlet TestServlet at " + request.getContextPath() + "</h2>");
+        out.println("<form method=\"post\" action=\"TestServlet\"><input type=\"text\" name=\"string\">");
+        out.println("<input type=\"submit\" value=\"Calculate\"></form>");
+        out.println("</body>");
+        out.println("</html>");
     }
 
-    
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        
+        response.setContentType("text/html;charset=UTF-8");
+        PrintWriter out = response.getWriter();
+        int number = Parser.parseAndSum(request.getParameter("string"));
+        out.println("<p>Sum of " + request.getParameter("string") + " = " + number + "</p>");
     }
 
-    
-    @Override
-    public String getServletInfo() {
-        return "Short description";
-    }// </editor-fold>
 
 }

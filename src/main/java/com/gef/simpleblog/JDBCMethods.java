@@ -7,7 +7,7 @@ import javax.naming.NamingException;
 
 public class JDBCMethods {
     private static final String JDBC_DRIVER = "org.sqlite.JDBC";
-    private static final String DB_URL = "jdbc:sqlite:testdatabase.db"; //TODO: Find a way to specify relative path to DB
+    private static final String DB_URL = "jdbc:sqlite:d:\\Projects\\java-learning\\SimpleBlog\\testdatabase.db"; //TODO: Find a way to specify relative path to DB
     private static final String USER = "";
     private static final String PASS = "";
     

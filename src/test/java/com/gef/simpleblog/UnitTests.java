@@ -71,7 +71,7 @@ public class UnitTests {
         //verify(mockedList).clear();
     }
     
-    @Test
+    /*@Test
     public void adminPanelServlet_doesSomething() throws ServletException, IOException {
         //Arrange
         HttpServletRequest req = mock(HttpServletRequest.class);
@@ -82,6 +82,6 @@ public class UnitTests {
         servlet.doGet(req, res);
         
         //Assert
-    }
+    }*/
     
 }

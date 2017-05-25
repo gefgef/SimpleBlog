@@ -41,6 +41,12 @@
             <version>2.7.22</version>
             <scope>test</scope>
         </dependency>
+        
+        <dependency>
+            <groupId>net.sourceforge.htmlunit</groupId>
+            <artifactId>htmlunit</artifactId>
+            <version>2.26</version>
+        </dependency>
     </dependencies>
 
     <build>
